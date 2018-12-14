@@ -1,9 +1,11 @@
 import React from 'react';
 import ThemeContext from '../contexts/ThemeContext';
+import ToggleButton from '../components/ToggleButton';
+
 
 const MainLayout = ({ children }) => (
   <ThemeContext.Consumer>
-    {({ theme }) => (
+    {({ theme, toggleTheme }) => (
       <div
         style={{
           backgroundColor: theme.backgroundColor,
@@ -16,6 +18,13 @@ const MainLayout = ({ children }) => (
           fontSize: 'calc(10px + 2vmin)'
         }}
       >
+        <ToggleButton
+          backgroundColor={theme.linkColor}
+          textColor={theme.backgroundColor}
+          onClick={toggleTheme}
+        >
+          change theme
+        </ToggleButton>
         {children}
       </div>
     )}
