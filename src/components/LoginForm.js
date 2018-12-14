@@ -2,6 +2,8 @@ import React from 'react';
 import ThemeContext from '../contexts/ThemeContext';
 import Button from './Button';
 
+let user;
+
 const LoginForm = ({ onSubmit = () => {} }) => (
   <ThemeContext.Consumer>
     {({ theme }) => (
@@ -10,7 +12,7 @@ const LoginForm = ({ onSubmit = () => {} }) => (
           <label htmlFor="username" style={{ color: theme.textColor }}>
             username
           </label>
-          <input name="username" id="username" />
+          <input name="username" id="username" ref={x => { user=x }}/>
         </div>
 
         <div>
@@ -23,7 +25,7 @@ const LoginForm = ({ onSubmit = () => {} }) => (
         <Button
           backgroundColor={theme.linkColor}
           textColor={theme.backgroundColor}
-          onClick={onSubmit}
+          onClick={() => onSubmit(user)}
         >
           login
         </Button>
