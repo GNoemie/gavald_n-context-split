@@ -4,7 +4,7 @@
 * React Suspense
 * React Lazy
 
-# Getting started
+## Getting started
 
 ```
 npm install
@@ -14,7 +14,7 @@ npm install
 npm run start
 ```
 
-# Authors
+## Authors
 
 * **Noemie GAVALDA**
 * **Quentin PRE**
